@@ -1,13 +1,69 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  /* color: #ffffff; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.list-user {
+  height: 450px;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 350px;
+  margin: 15px auto;
+  padding: 2rem;
+  background-color: #bb8bbd;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  /* border-radius: 20px; */
+  font-size: 18px;
+  letter-spacing: 0.1rem;
+} 
+
+.item-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin: 1rem 0;
+    padding: 0 1rem;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+    border-radius: 5px;
+}
+/* input {
+  padding: 0.5rem;
+  outline: none;
+  margin-right: 0.5rem;
+} */
+
+input[type="text"] {
+  margin: 1rem 0;
+  font-size: 16px;
+  border: none;
+  padding: 0.6rem;
+  outline: none;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.line {
+  text-decoration: line-through
+}
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.add-icon {
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 0.3rem;
+  color: black;
+  background-color: white;
 }

@@ -3,15 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import rootSaga from './sagas/rootSaga';
+//Redux
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import myReducer from './reducers';
+//Redux Saga
+import createSagaMiddleware from 'redux-saga'; // hàm này có nhiệm vụ tạo ra một middleware năm giữa action và reducer trong redux
+
+// Middleware
+const sagaMiddleware = createSagaMiddleware(); 
+
+var store = createStore(
+  myReducer,
+  applyMiddleware(sagaMiddleware)
+);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={ store }>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+sagaMiddleware.run(rootSaga); // Hàm này là chạy các saga
 reportWebVitals();
